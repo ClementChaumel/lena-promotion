@@ -1,11 +1,51 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import Welcome from "../components/Welcome.astro";
+import Layout from "../layouts/Layout.astro";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import { db, Episode, Season, Brand, Collab, eq } from "astro:db";
+
+const season1Episodes = await db
+  .select()
+  .from(Episode)
+  .where(eq(Episode.seasonId, 1));
+
+const seasons = [];
+
+const numberOfSeasons = await db.$count(Season);
+
+for (let i = 1; i <= numberOfSeasons; i++) {
+  const episodes = await db
+    .select()
+    .from(Episode)
+    .where(eq(Episode.seasonId, i));
+
+  seasons.push({
+    number: i,
+    year: (
+      await db
+        .select({ year: Season.year })
+        .from(Season)
+        .where(eq(Season.number, i))
+    )[0].year,
+    episodes: episodes,
+  });
+}
 ---
 
 <Layout>
-	<Welcome />
+  <Welcome />
+  {
+    seasons.map((season) => (
+      <div>
+        <h2>{season.number}</h2>
+        <h3>{season.year}</h3>
+        {season.episodes.map((episode) => (
+          <div>
+            <h4>{episode.number}</h4>
+            <h5>{episode.title}</h5>
+          </div>
+        ))}
+      </div>
+    ))
+  }
 </Layout>
