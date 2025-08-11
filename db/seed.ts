@@ -13,6 +13,72 @@ export default async function seed() {
     { id: 9, number: 9, year: 2025 },
   ]);
 
+  await db.insert(Brand).values([
+    {
+      id: 1,
+      name: "Hotel Mahfouf",
+      primaryColor: "#F7CACA",
+      secondaryColor: "#009874",
+      logo: "https://beastly-agency.com/wp-content/uploads/2025/02/freepik__background__87448.png",
+    },
+    {
+      id: 2,
+      name: "Adidas",
+      primaryColor: "#000000",
+      secondaryColor: "#FFFFFF",
+      logo: "https://logo-marque.com/wp-content/uploads/2020/04/Adidas-Logo-650x366.png",
+    },
+    {
+      id: 3,
+      name: "Chupa Chups",
+      primaryColor: "#FFF200",
+      secondaryColor: "#CF103E",
+      logo: "https://logo-marque.com/wp-content/uploads/2020/08/Chupa-Chups-Logo-650x366.png",
+    },
+    {
+      id: 4,
+      name: "Live Nation",
+      primaryColor: "#E21836",
+      secondaryColor: "#000000",
+      logo: "https://images.seeklogo.com/logo-png/51/1/live-nation-logo-png_seeklogo-514072.png",
+    },
+    {
+      id: 5,
+      name: "Encore mieux",
+      primaryColor: "#ffcc37",
+      secondaryColor: "#000000",
+      logo: "https://lenaeditions.com/cdn/shop/files/COUV-RENDU-WEB.jpg?v=1754403539&width=400",
+    },
+    {
+      id: 6,
+      name: "Champomy",
+      primaryColor: "#f1dda6",
+      secondaryColor: "#d5001c",
+      logo: "https://external-content.duckduckgo.com/iu/?u=https://www.studioconnecte.com/wp-content/uploads/2017/03/logo-champomy-600x600.jpg&f=1&nofb=1&ipt=0579e9339762b757ecfd3edeae288b84d3b627f4f0e5a0d098b89676bb761304",
+    },
+    {
+      id: 7,
+      name: "Duolingo",
+      primaryColor: "#58cc02",
+      secondaryColor: "#89e219",
+      logo: "https://logos-world.net/wp-content/uploads/2021/05/Duolingo-Logo.jpg",
+    },
+    {
+      id: 8,
+      name: "Taco Bell",
+      primaryColor: "#682A8D",
+      secondaryColor: "#A07EBA",
+      logo: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fdwglogo.com%2Fwp-content%2Fuploads%2F2019%2F02%2Ftaco_bell_logo_transparent.png&f=1&nofb=1&ipt=ddd32829951e287e617c45531891164d60d4bdf9670b76cde888d13a1bfb8a4d",
+    },
+    {
+      id: 9,
+      name: "Pom' Potes",
+      primaryColor: "#036634",
+      secondaryColor: "#d50e29",
+      logo: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.pngkit.com%2Fpng%2Fdetail%2F74-744859_logo-pompotes-pom-potes.png&f=1&nofb=1&ipt=4ca02f95c6ff386ebb4fa6d59f607cb1e5763d5c1b39f8a9797675237727acaf",
+    },
+  ]);
+
   await db.insert(Episode).values([
     // Season 1
     { id: 101, seasonId: 1, number: 1, title: "Episode 1", duration: 10 },
@@ -279,36 +345,244 @@ export default async function seed() {
     { id: 831, seasonId: 8, number: 31, title: "Episode 31", duration: 10 },
 
     // Season 9
-    { id: 901, seasonId: 9, number: 1, title: "Episode 1", duration: 10 },
-    { id: 902, seasonId: 9, number: 2, title: "Episode 2", duration: 10 },
-    { id: 903, seasonId: 9, number: 3, title: "Episode 3", duration: 10 },
-    { id: 904, seasonId: 9, number: 4, title: "Episode 4", duration: 10 },
-    { id: 905, seasonId: 9, number: 5, title: "Episode 5", duration: 10 },
+    {
+      id: 901,
+      seasonId: 9,
+      number: 1,
+      title: "la fin d'un cycle",
+      duration: 2254,
+    },
+    {
+      id: 902,
+      seasonId: 9,
+      number: 2,
+      title: "j’en ai pleuré…",
+      duration: 1755,
+    },
+    {
+      id: 903,
+      seasonId: 9,
+      number: 3,
+      title: "enterrement de vie de jeune fille !",
+      duration: 1532,
+    },
+    {
+      id: 904,
+      seasonId: 9,
+      number: 4,
+      title: "on est bien arrivés à….",
+      duration: 1542,
+    },
+    {
+      id: 905,
+      seasonId: 9,
+      number: 5,
+      title: "on dort au milieu du désert !",
+      duration: 1725,
+    },
     { id: 906, seasonId: 9, number: 6, title: "Episode 6", duration: 10 },
     { id: 907, seasonId: 9, number: 7, title: "Episode 7", duration: 10 },
     { id: 908, seasonId: 9, number: 8, title: "Episode 8", duration: 10 },
     { id: 909, seasonId: 9, number: 9, title: "Episode 9", duration: 10 },
     { id: 910, seasonId: 9, number: 10, title: "Episode 10", duration: 10 },
-    { id: 911, seasonId: 9, number: 11, title: "Episode 11", duration: 10 },
-    { id: 912, seasonId: 9, number: 12, title: "Episode 12", duration: 10 },
-    { id: 913, seasonId: 9, number: 13, title: "Episode 13", duration: 10 },
-    { id: 914, seasonId: 9, number: 14, title: "Episode 14", duration: 10 },
-    { id: 915, seasonId: 9, number: 15, title: "Episode 15", duration: 10 },
-    { id: 916, seasonId: 9, number: 16, title: "Episode 16", duration: 10 },
-    { id: 917, seasonId: 9, number: 17, title: "Episode 17", duration: 10 },
-    { id: 918, seasonId: 9, number: 18, title: "Episode 18", duration: 10 },
-    { id: 919, seasonId: 9, number: 19, title: "Episode 19", duration: 10 },
-    { id: 920, seasonId: 9, number: 20, title: "Episode 20", duration: 10 },
-    { id: 921, seasonId: 9, number: 21, title: "Episode 21", duration: 10 },
-    { id: 922, seasonId: 9, number: 22, title: "Episode 22", duration: 10 },
-    { id: 923, seasonId: 9, number: 23, title: "Episode 23", duration: 10 },
-    { id: 924, seasonId: 9, number: 24, title: "Episode 24", duration: 10 },
-    { id: 925, seasonId: 9, number: 25, title: "Episode 25", duration: 10 },
-    { id: 926, seasonId: 9, number: 26, title: "Episode 26", duration: 10 },
-    { id: 927, seasonId: 9, number: 27, title: "Episode 27", duration: 10 },
-    { id: 928, seasonId: 9, number: 28, title: "Episode 28", duration: 10 },
-    { id: 929, seasonId: 9, number: 29, title: "Episode 29", duration: 10 },
-    { id: 930, seasonId: 9, number: 30, title: "Episode 30", duration: 10 },
-    { id: 931, seasonId: 9, number: 31, title: "Episode 31", duration: 10 },
+    // { id: 911, seasonId: 9, number: 11, title: "Episode 11", duration: 10 },
+    // { id: 912, seasonId: 9, number: 12, title: "Episode 12", duration: 10 },
+    // { id: 913, seasonId: 9, number: 13, title: "Episode 13", duration: 10 },
+    // { id: 914, seasonId: 9, number: 14, title: "Episode 14", duration: 10 },
+    // { id: 915, seasonId: 9, number: 15, title: "Episode 15", duration: 10 },
+    // { id: 916, seasonId: 9, number: 16, title: "Episode 16", duration: 10 },
+    // { id: 917, seasonId: 9, number: 17, title: "Episode 17", duration: 10 },
+    // { id: 918, seasonId: 9, number: 18, title: "Episode 18", duration: 10 },
+    // { id: 919, seasonId: 9, number: 19, title: "Episode 19", duration: 10 },
+    // { id: 920, seasonId: 9, number: 20, title: "Episode 20", duration: 10 },
+    // { id: 921, seasonId: 9, number: 21, title: "Episode 21", duration: 10 },
+    // { id: 922, seasonId: 9, number: 22, title: "Episode 22", duration: 10 },
+    // { id: 923, seasonId: 9, number: 23, title: "Episode 23", duration: 10 },
+    // { id: 924, seasonId: 9, number: 24, title: "Episode 24", duration: 10 },
+    // { id: 925, seasonId: 9, number: 25, title: "Episode 25", duration: 10 },
+    // { id: 926, seasonId: 9, number: 26, title: "Episode 26", duration: 10 },
+    // { id: 927, seasonId: 9, number: 27, title: "Episode 27", duration: 10 },
+    // { id: 928, seasonId: 9, number: 28, title: "Episode 28", duration: 10 },
+    // { id: 929, seasonId: 9, number: 29, title: "Episode 29", duration: 10 },
+    // { id: 930, seasonId: 9, number: 30, title: "Episode 30", duration: 10 },
+    // { id: 931, seasonId: 9, number: 31, title: "Episode 31", duration: 10 },
+  ]);
+
+  // Episode 901
+
+  await db.insert(Collab).values([
+    {
+      episodeId: 901,
+      brandId: 2,
+      description: "Lena court en partenariat avec Adidas",
+      timestamp: 759,
+      duration: 130,
+      type: "sponsor",
+    },
+    {
+      episodeId: 901,
+      brandId: 1,
+      description: "Lena va au Pop-Up et montre la mise en place",
+      timestamp: 950,
+      duration: 121,
+      type: "self",
+    },
+    {
+      episodeId: 901,
+      brandId: 2,
+      description: "Lena parle du partenariat avec Adidas",
+      timestamp: 1176,
+      duration: 18,
+      type: "sponsor",
+    },
+    {
+      episodeId: 901,
+      brandId: 1,
+      description: "Lena fait une soirée d'inauguration au Pop-Up",
+      timestamp: 1557,
+      duration: 369,
+      type: "self",
+    },
+    {
+      episodeId: 901,
+      brandId: 2,
+      description: "Lena déballe ses goodies offerts par Adidas",
+      timestamp: 2118,
+      duration: 64,
+      type: "sponsor",
+    },
+  ]);
+
+  // Episode 902
+
+  await db.insert(Collab).values([
+    {
+      episodeId: 902,
+      brandId: 1,
+      description: "Lena et Solène vont à l'ouverture du Pop-Up",
+      timestamp: 79,
+      duration: 235,
+      type: "self",
+    },
+    {
+      episodeId: 902,
+      brandId: 2,
+      description: "Lena court en partenariat avec Adidas",
+      timestamp: 320,
+      duration: 90,
+      type: "sponsor",
+    },
+    {
+      episodeId: 902,
+      brandId: 3,
+      description: "Lena montre des présentoirs de Chupa Chups",
+      timestamp: 661,
+      duration: 150,
+      type: "sponsor",
+    },
+    {
+      episodeId: 902,
+      brandId: 4,
+      description: "Lena se fait offrir des billets par Live Nation",
+      timestamp: 1035,
+      duration: 98,
+      type: "undisclosed",
+    },
+  ]);
+
+  // Episode 903
+
+  await db.insert(Collab).values([
+    {
+      episodeId: 903,
+      brandId: 5,
+      description: "Lena parle de son prochain livre",
+      timestamp: 273,
+      duration: 43,
+      type: "self",
+    },
+    {
+      episodeId: 903,
+      brandId: 6,
+      description:
+        "Lena et Solène font leurs valises en buvant du Champomy. (Bouteille toujours en vue, logo face à la caméra)",
+      timestamp: 958,
+      duration: 32,
+      type: "undisclosed",
+    },
+    {
+      episodeId: 903,
+      brandId: 7,
+      description: "Lena organise l'EVJF de Duolingo",
+      timestamp: 1072,
+      duration: 283,
+      type: "sponsor",
+    },
+    {
+      episodeId: 903,
+      brandId: 8,
+      description:
+        "Lena et la bande mangent chez Taco Bell (produit nommé, logo bien dans le cadre)",
+      timestamp: 1357,
+      duration: 21,
+      type: "undisclosed",
+    },
+    {
+      episodeId: 903,
+      brandId: 2,
+      description: "Lena court en partenariat avec Adidas",
+      timestamp: 1408,
+      duration: 53,
+      type: "sponsor",
+    },
+  ]);
+
+  // Episode 904
+  await db.insert(Collab).values([
+    {
+      episodeId: 904,
+      brandId: 5,
+      description: "Lena annonce la précommande de son prochain livre",
+      timestamp: 327,
+      duration: 108,
+      type: "self",
+    },
+    {
+      episodeId: 904,
+      brandId: 2,
+      description: "Lena court en partenariat avec Adidas",
+      timestamp: 1292,
+      duration: 172,
+      type: "sponsor",
+    },
+  ]);
+
+  // Episode 905
+
+  await db.insert(Collab).values([
+    {
+      episodeId: 905,
+      brandId: 9,
+      description: "Lena goute des Pom'Potes",
+      timestamp: 547,
+      duration: 108,
+      type: "sponsor",
+    },
+    {
+      episodeId: 905,
+      brandId: 5,
+      description: "Lena regarde les précommandes de son prochain livre",
+      timestamp: 922,
+      duration: 74,
+      type: "self",
+    },
+    {
+      episodeId: 905,
+      brandId: 2,
+      description: "Lena court en partenariat avec Adidas",
+      timestamp: 1133,
+      duration: 154,
+      type: "sponsor",
+    },
   ]);
 }

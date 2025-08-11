@@ -1,51 +1,201 @@
 ---
+import EpisodeChart from "../components/EpisodeChart.astro";
 import Welcome from "../components/Welcome.astro";
 import Layout from "../layouts/Layout.astro";
 
-import { db, Episode, Season, Brand, Collab, eq } from "astro:db";
+import { db, Episode, Season, Brand, Collab, eq, desc, sum } from "astro:db";
 
-const season1Episodes = await db
+const seasonId = 9;
+
+const season = (
+  await db
+    .select({
+      number: Season.number,
+      year: Season.year,
+    })
+    .from(Season)
+    .where(eq(Season.number, seasonId))
+)[0];
+
+const episodes = await db
   .select()
   .from(Episode)
-  .where(eq(Episode.seasonId, 1));
+  .where(eq(Episode.seasonId, seasonId))
+  .orderBy(desc(Episode.number));
 
-const seasons = [];
+const collabLenghts = [] as number[];
 
-const numberOfSeasons = await db.$count(Season);
-
-for (let i = 1; i <= numberOfSeasons; i++) {
-  const episodes = await db
-    .select()
-    .from(Episode)
-    .where(eq(Episode.seasonId, i));
-
-  seasons.push({
-    number: i,
-    year: (
-      await db
-        .select({ year: Season.year })
-        .from(Season)
-        .where(eq(Season.number, i))
-    )[0].year,
-    episodes: episodes,
-  });
+for (const episode of episodes) {
+  const totalCollabsLength = (
+    await db
+      .select({ value: sum(Collab.duration) })
+      .from(Collab)
+      .where(eq(Collab.episodeId, episode.id))
+  )[0].value;
+  collabLenghts.push(Number(totalCollabsLength) ?? 0);
 }
 ---
 
 <Layout>
-  <Welcome />
-  {
-    seasons.map((season) => (
-      <div>
-        <h2>{season.number}</h2>
-        <h3>{season.year}</h3>
-        {season.episodes.map((episode) => (
-          <div>
-            <h4>{episode.number}</h4>
-            <h5>{episode.title}</h5>
+  <div class="season">
+    <h2>
+      Saison {season.number} - {season.year}
+    </h2>
+    <div class="episodes">
+      {
+        episodes.map((episode, index) => (
+          <div class="episode">
+            <div class="episode-header">
+              <div class="number">
+                <span>{episode.number} / 31</span>
+                <i />
+                <i />
+              </div>
+            </div>
+
+            <h3>{episode.title}</h3>
+            <span class="percentage">
+              pourcentage de pub :{" "}
+              <span>
+                {Math.round((collabLenghts[index] / episode.duration) * 100)}%
+              </span>
+            </span>
+            <div class="chart-wrapper">
+              <EpisodeChart episodeId={episode.id} />
+            </div>
           </div>
-        ))}
-      </div>
-    ))
-  }
+        ))
+      }
+    </div>
+  </div>
 </Layout>
+
+<style>
+  h2 {
+    font-size: 2.5rem;
+  }
+  .season {
+    margin-bottom: 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    padding: 0 2rem;
+  }
+
+  .episodes {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  h3 {
+    font-size: 2rem;
+    span {
+      font-family: "Nunito", sans-serif;
+      font-size: 1.5rem;
+      color: var(--light-blue);
+      font-weight: 600;
+      letter-spacing: -0.1rem;
+    }
+  }
+
+  .episode {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    padding: 2rem;
+    background-color: rgb(254, 255, 236);
+    border-radius: 12px;
+    border-top-left-radius: 3rem;
+    border: 8px solid;
+    border-color: var(--light-blue);
+    gap: 1rem;
+
+    box-shadow: var(--shadow-elevation-high);
+  }
+
+  .episode-header {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    padding-bottom: 4rem;
+
+    .number {
+      font-size: 1.6rem;
+      color: var(--egg-shell);
+      background-color: var(--light-blue);
+
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      position: absolute;
+      top: -2.5rem;
+      left: -2.5rem;
+      letter-spacing: -0.15rem;
+      height: 6rem;
+      width: 6rem;
+      font-weight: 900;
+      z-index: 0;
+
+      span {
+        z-index: 10;
+      }
+
+      i {
+        position: absolute;
+        top: 0.5rem;
+        left: 3.5rem;
+        width: 5rem;
+        height: 2.5rem;
+        background-color: var(--light-blue);
+        z-index: 1;
+
+        &::after {
+          content: "";
+          height: 5rem;
+          width: 5rem;
+          border-radius: 50%;
+          background-color: rgb(254, 255, 236);
+          position: absolute;
+          top: 0;
+          right: -2.5rem;
+          z-index: 3;
+        }
+
+        &:last-child {
+          transform: rotate(270deg) scaleX(-1) translate(68px, -68px);
+        }
+      }
+    }
+  }
+
+  h3 {
+    position: absolute;
+    z-index: 20;
+    top: -1.5rem;
+    left: 7rem;
+  }
+
+  .percentage {
+    position: absolute;
+    z-index: 20;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    span {
+      color: var(--melon);
+      font-weight: 900;
+      font-size: 1.5rem;
+    }
+  }
+
+  .chart-wrapper {
+    width: calc(100% - 0rem);
+    margin-left: auto;
+  }
+</style>

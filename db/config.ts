@@ -22,14 +22,15 @@ const Brand = defineTable({
   columns: {
     id: column.number({ primaryKey: true }),
     name: column.text(),
-    color: column.text(),
+    primaryColor: column.text(),
+    secondaryColor: column.text(),
     logo: column.text(),
   },
 });
 
 const Collab = defineTable({
   columns: {
-    id: column.number({ primaryKey: true }),
+    // id: column.number({ primaryKey: true }),
     episodeId: column.number({ references: () => Episode.columns.id }),
     brandId: column.number({ references: () => Brand.columns.id }),
     description: column.text(),
