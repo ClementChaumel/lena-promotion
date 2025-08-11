@@ -920,6 +920,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/add@npm:^2":
+  version: 2.0.3
+  resolution: "@types/add@npm:2.0.3"
+  checksum: 10c0/d18841b43d3799f69db0bdae380d19d05f43b716315c5bfd4d6c1b3467bada2644eab8c04bb5afdb94bba87604da06d466f22fe30df6bcf0518c373593bb474a
+  languageName: node
+  linkType: hard
+
 "@types/debug@npm:^4.0.0":
   version: 4.1.12
   resolution: "@types/debug@npm:4.1.12"
@@ -1027,6 +1034,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"add@npm:^2.0.6":
+  version: 2.0.6
+  resolution: "add@npm:2.0.6"
+  checksum: 10c0/6b21d5f2e58cf5e15d56cc6f9ebce04f04f4c33ae25f09d600ddacf8df00036ba521f17feb1b3f81307b7c6d2ef0bed8b511a0f86f062eb90c2f909b48b588ae
+  languageName: node
+  linkType: hard
+
 "agent-base@npm:^7.1.0, agent-base@npm:^7.1.2":
   version: 7.1.4
   resolution: "agent-base@npm:7.1.4"
@@ -1101,6 +1115,13 @@ __metadata:
   version: 2.0.1
   resolution: "array-iterate@npm:2.0.1"
   checksum: 10c0/756c08334f95e290f03ab2141b034514af1311ef7b62f15b0f5ea6f8f3033ee9cc6a8f1c3e9ff4803d4d723cf992aa61460acf5fce884936972db966b1da287d
+  languageName: node
+  linkType: hard
+
+"astro-navbar@npm:^2.4.0":
+  version: 2.4.0
+  resolution: "astro-navbar@npm:2.4.0"
+  checksum: 10c0/a9c3984a2d3c500534e3b1b9bb86cb412b5778777d32db1e58dd157141851b3ab2fcd6eaee98c8cedaf83c53978590b7e813d09c3efde73c0290d141e191be34
   languageName: node
   linkType: hard
 
@@ -2390,7 +2411,10 @@ __metadata:
   resolution: "lena-promotion@workspace:."
   dependencies:
     "@astrojs/db": "npm:^0.17.0"
+    "@types/add": "npm:^2"
+    add: "npm:^2.0.6"
     astro: "npm:^5.12.9"
+    astro-navbar: "npm:^2.4.0"
     esbuild: "npm:^0.25.8"
     vite: "npm:^7.1.1"
   languageName: unknown

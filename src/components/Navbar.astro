@@ -1,0 +1,168 @@
+---
+import {
+  Astronav,
+  MenuItems,
+  MenuIcon,
+  Dropdown,
+  DropdownItems,
+  DropdownSubmenu,
+} from "astro-navbar";
+---
+
+<div class="navbar">
+  <div class="navbar-wrapper">
+    <Astronav>
+      <MenuItems class="hidden show-on-lg">
+        <ul class="nav-links">
+          <li>
+            <Dropdown class="group">
+              <button>
+                <span>Saisons</span>
+              </button>
+              <DropdownItems>
+                <div class="dropdown-items">
+                  <ul>
+                    <li><a href="/seasons/9">Saison 9</a></li>
+                  </ul>
+                </div>
+              </DropdownItems>
+            </Dropdown>
+          </li>
+          <li><a href="/brands">Marques</a></li>
+        </ul>
+      </MenuItems>
+      <div class="logo-wrapper">
+        <a href="/" class="logo"><span>+ </span>€<span> +</span></a>
+        <MenuIcon class="menu-icon" />
+      </div>
+      <MenuItems class="hidden show-on-lg">
+        <ul class="nav-links last">
+          <li><a href="/faq">FAQ</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </MenuItems>
+    </Astronav>
+  </div>
+</div>
+
+<style is:global>
+  .hidden {
+    display: none;
+  }
+
+  @media (min-width: 1024px) {
+    .show-on-lg {
+      display: flex;
+    }
+
+    #astronav-menu {
+      display: none;
+    }
+  }
+
+  .navbar {
+    background-color: #feffec;
+    box-shadow: var(--shadow-elevation-medium);
+    padding: 1rem 2rem;
+    border-bottom: 8px solid var(--light-blue);
+  }
+
+  .navbar-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    menu,
+    ul {
+      padding-inline-start: 0;
+    }
+
+    a,
+    button {
+      background-color: transparent;
+      border: none;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--paynes-gray);
+      transition: color 0.2s;
+      font-family: "Nunito", sans-serif;
+      cursor: pointer;
+
+      &:hover {
+        color: var(--melon);
+      }
+    }
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  @media (max-width: 1024px) {
+    .nav-links {
+      flex-direction: column;
+      position: absolute;
+      justify-content: flex-start;
+      align-items: flex-end;
+      background: #feffec;
+      border-bottom: 8px solid var(--light-blue);
+      top: 5.8rem;
+      width: 100%;
+      left: 0;
+      left: -4rem;
+      padding: 1rem 2rem !important;
+      z-index: 1000;
+
+      &.last {
+        top: 12.5rem;
+        box-shadow: var(--shadow-elevation-medium);
+      }
+    }
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      position: relative;
+    }
+  }
+
+  .logo-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  @media (min-width: 1024px) {
+    .logo-wrapper {
+      width: auto;
+    }
+  }
+
+  .dropdown-items {
+    position: absolute;
+    top: 100%;
+    left: 0;
+  }
+
+  a.logo {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--melon);
+    text-decoration: none;
+
+    > span {
+      color: var(--light-blue);
+      font-size: 2.8rem;
+    }
+  }
+</style>
