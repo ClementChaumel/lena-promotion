@@ -1,0 +1,123 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Lena Foire aux Questions">
+  <div class="faq-wrapper">
+    <div class="faq">
+      <div class="question">
+        <p>Pourquoi as-tu créé ce site ?</p>
+        <p>
+          En regardant cette saison des vlogs d'aout je me suis rendu compte
+          qu'il y avait beaucoup de partenariats commerciaux.
+          <br /> Il me semblait que c'était moins le cas avant alors je me suis dit
+          que j'allais faire un site pour lister tous les partenariats commerciaux
+          et voir leur évolution au fil des saisons.
+        </p>
+      </div>
+      <div class="question">
+        <p>
+          Il faut arrêter de diaboliser les partenariats commerciaux. Il faut
+          bien vivre !
+        </p>
+        <p>
+          Le soucis c'est que les vidéos sont déjà monétisées (plusieurs pubs de
+          1min non skippables) et pensées pour. (musiques libres de droits,
+          etc.)
+          <br />
+          Cette monétisation était compréhensible lorsqu'elle débutait mais là, alors
+          que sa fortune est estimée à 67 millions en 2023 ça devient plus dur à
+          justifier.
+          <br />
+          <br />
+          Lena a aujourd'hui les moyens d'offrir exactement le même contenu sans
+          aucune pub. Et le choix d'une monétisation aussi agressive, surtout quand
+          on sait qu'elle touche un public jeune, me dérange.
+        </p>
+      </div>
+      <div class="question">
+        <p>
+          Est-ce que c'est pas un peu sexiste de s'en prendre à elle quand tous
+          les influenceurs font pareil ?
+        </p>
+        <p>
+          Si, sûrement.
+          <br />
+          Ce n'est pas voulu mais c'est un fait que les femmes sont plus surveillées
+          et critiquées que les hommes.
+          <br />
+          <br />
+          C'est un problème intrinsèque au métier "d'infuenceur" et il y a plein
+          d'exemples de dérives (les produits laitiers, etc.)
+          <br />
+          Le fait est que je ne peux pas être exhaustif et que je ne regarde pas
+          vraiment d'autre contenu d'influenceurs à part les vlogs d'aout !
+        </p>
+      </div>
+      <div class="question">
+        <p>On aime pas la réussite dans ce pays !</p>
+        <p>
+          J'aimerais surtout qu'il y ait une autre image à la réussite sur
+          internet que celle de devenir un homme-sandwich et de faire la pub
+          pour des sucettes et des compotes.
+          <br />
+          Avec cette liberté financière qu'elle s'est construite, Lena pourrait proposer
+          du contenu plus personnel, plus risqué, plus artistique. Elle a une liberté
+          que peu d'autres "créateurices de contenu" ont : Elle peut s'affranchir
+          des bons vouloir des marques et des algorithmes de monétisation.
+          <br />
+          <br />
+          C'est pourquoi j'ai du mal à justifier ce choix d'opimiser au maximum ses
+          revenus autrement que par avidité.
+        </p>
+      </div>
+      <div class="question">
+        <p>À quand les autres saisons ?</p>
+        <p>
+          Quand j'aurai le temps mais c'est prévu !
+          <br />
+          J'ai pour idée de pouvoir faire des comparaisons entre les saisons sur
+          ce point mais aussi pourquoi pas d'autres comme le bilan carbone des vlogs
+          d'août, ses fréquentations au fil des ans, etc.
+        </p>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .faq-wrapper {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+  }
+  .faq {
+    background-color: #feffec;
+    padding: 2rem;
+    border-radius: 12px;
+    border: 8px solid var(--light-blue);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .question {
+    max-width: 100%;
+
+    > p:first-child {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--paynes-gray);
+      margin-bottom: 1rem;
+    }
+
+    > p:last-child {
+      max-width: 60ch;
+    }
+
+    &:not(:last-child) {
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--light-blue);
+    }
+  }
+</style>

@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import { db, Episode, Season, Brand, Collab, eq } from "astro:db";
 
 const episodeId = Astro.props.episodeId;
@@ -50,7 +51,13 @@ console.log(brands);
           <div class="tooltip-content">
             <div class="tooltip-header">
               <div class="tooltip-brand">
-                <img class="logo" src={`${brands[index].logo}`} alt="" />
+                <Image
+                  height={32}
+                  width={100}
+                  class="logo"
+                  src={`${brands[index].logo}`}
+                  alt=""
+                />
                 <span>{brands[index].name}</span>
               </div>
               <span>
@@ -81,11 +88,11 @@ console.log(brands);
 
   @keyframes spin {
     0% {
-      background-position-x: 300px;
+      background-position-x: 1000px;
     }
 
     100% {
-      background-position-x: 498px;
+      background-position-x: 1198px;
     }
   }
 
@@ -102,7 +109,7 @@ console.log(brands);
       var(--secondary-color) 10px,
       var(--secondary-color) 20px
     );
-    background-size: 1000px 200%;
+    background-size: 2000px 200%;
     animation: spin 11s linear infinite;
     animation-play-state: paused;
 
@@ -209,6 +216,7 @@ console.log(brands);
 
   .tooltip-brand img {
     height: 32px;
+    width: auto !important;
     object-fit: cover;
   }
 

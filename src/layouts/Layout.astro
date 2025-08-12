@@ -1,5 +1,8 @@
 ---
+import Footer from "../components/Footer.astro";
 import Navbar from "../components/Navbar.astro";
+
+const { title } = Astro.props;
 ---
 
 <!doctype html>
@@ -8,8 +11,7 @@ import Navbar from "../components/Navbar.astro";
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Astro Basics</title>
+    <title>{title}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -19,7 +21,9 @@ import Navbar from "../components/Navbar.astro";
   </head>
   <body>
     <Navbar />
+    <h1 class="page-title">{title}</h1>
     <slot />
+    <Footer />
   </body>
 </html>
 
@@ -80,5 +84,13 @@ import Navbar from "../components/Navbar.astro";
     background-image: url("/fondlena.png");
     background-size: 40px;
     background-attachment: fixed;
+  }
+
+  .page-title {
+    font-size: 3rem;
+    width: 100%;
+    text-align: center;
+    filter: drop-shadow(3px 3px 0 var(--melon));
+    margin-bottom: 3rem;
   }
 </style>
