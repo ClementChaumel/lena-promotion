@@ -77,6 +77,27 @@ export default async function seed() {
       secondaryColor: "#d50e29",
       logo: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.pngkit.com%2Fpng%2Fdetail%2F74-744859_logo-pompotes-pom-potes.png&f=1&nofb=1&ipt=4ca02f95c6ff386ebb4fa6d59f607cb1e5763d5c1b39f8a9797675237727acaf",
     },
+    {
+      id: 10,
+      name: "La Mamounia",
+      primaryColor: "#f4efe3",
+      secondaryColor: "#781924",
+      logo: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwikiwandv2-19431.kxcdn.com%2F_next%2Fimage%3Furl%3Dhttps%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fen%2Fthumb%2Fd%2Fd3%2FLa_Mamounia_Logo.svg%2F640px-La_Mamounia_Logo.svg.png%26w%3D640%26q%3D50&f=1&nofb=1&ipt=29756dcb391cca06c56d60679a00e043f23e4a4859082b922fbd0842998269f1",
+    },
+    {
+      id: 11,
+      name: "Chez Ali",
+      primaryColor: "#383e56",
+      secondaryColor: "#F69E7B",
+      logo: "https://cdn.shortpixel.ai/spai/ret_img/fantasia-chez-ali.com/wp-content/uploads/2022/04/Official-Chez-ali-logo.svg",
+    },
+    {
+      id: 12,
+      name: "Zyne",
+      primaryColor: "#fdeee9",
+      secondaryColor: "#212121",
+      logo: "https://zyneofficial.com/cdn/shop/files/logo_28_12_Crop_360x.png?v=1629806461",
+    },
   ]);
 
   await db.insert(Episode).values([
@@ -380,8 +401,20 @@ export default async function seed() {
       title: "on dort au milieu du désert !",
       duration: 1725,
     },
-    { id: 906, seasonId: 9, number: 6, title: "Episode 6", duration: 10 },
-    { id: 907, seasonId: 9, number: 7, title: "Episode 7", duration: 10 },
+    {
+      id: 906,
+      seasonId: 9,
+      number: 6,
+      title: "le plus bel hôtel du monde",
+      duration: 1894,
+    },
+    {
+      id: 907,
+      seasonId: 9,
+      number: 7,
+      title: "on a du appeler un médecin en urgence",
+      duration: 1345,
+    },
     { id: 908, seasonId: 9, number: 8, title: "Episode 8", duration: 10 },
     { id: 909, seasonId: 9, number: 9, title: "Episode 9", duration: 10 },
     { id: 910, seasonId: 9, number: 10, title: "Episode 10", duration: 10 },
@@ -582,6 +615,64 @@ export default async function seed() {
       description: "Lena court en partenariat avec Adidas",
       timestamp: 1133,
       duration: 154,
+      type: "sponsor",
+    },
+  ]);
+
+  // Episode 906
+  await db.insert(Collab).values([
+    {
+      episodeId: 906,
+      brandId: 10,
+      description:
+        "Lena arrive à l'hôtel La Mamounia, le décrit comme le plus beau du monde et filme tout en détail",
+      timestamp: 789,
+      duration: 646,
+      type: "undisclosed",
+    },
+    {
+      episodeId: 906,
+      brandId: 11,
+      description:
+        "Lena et la bande mangent et voient un dîner spectacle Chez Ali",
+      timestamp: 1514,
+      duration: 143,
+      type: "undisclosed",
+    },
+    {
+      episodeId: 906,
+      brandId: 12,
+      description: "Unboxing de chaussures Zyne",
+      timestamp: 1748,
+      duration: 42,
+      type: "undisclosed",
+    },
+    {
+      episodeId: 906,
+      brandId: 2,
+      description: "Lena court en partenariat avec Adidas",
+      timestamp: 1790,
+      duration: 59,
+      type: "sponsor",
+    },
+  ]);
+
+  // Episode 907
+  await db.insert(Collab).values([
+    {
+      episodeId: 907,
+      brandId: 10,
+      description: "Lena prend le petit dej' à La Mamounia",
+      timestamp: 177,
+      duration: 56,
+      type: "undisclosed",
+    },
+    {
+      episodeId: 907,
+      brandId: 2,
+      description: "Lena court en partenariat avec Adidas",
+      timestamp: 802,
+      duration: 101,
       type: "sponsor",
     },
   ]);
