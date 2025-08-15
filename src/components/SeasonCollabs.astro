@@ -195,4 +195,28 @@ for (const episode of episodes) {
     width: calc(100% - 0rem);
     margin-left: auto;
   }
+
+  @media (max-width: 1024px) {
+    h3 {
+      top: 0;
+      font-size: 1.2rem;
+      line-height: 1rem;
+    }
+
+    .percentage {
+      color: transparent;
+      top: 0;
+      right: 0;
+
+      span {
+        font-weight: 900;
+        font-size: 1rem;
+        color: var(--paynes-gray);
+        background-color: var(--light-blue);
+        padding-left: 0.5rem;
+        padding-bottom: 0.2rem;
+        border-bottom-left-radius: 12px;
+      }
+    }
+  }
 </style>
