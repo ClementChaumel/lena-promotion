@@ -415,12 +415,48 @@ export default async function seed() {
       title: "on a du appeler un médecin en urgence",
       duration: 1345,
     },
-    { id: 908, seasonId: 9, number: 8, title: "Episode 8", duration: 10 },
-    { id: 909, seasonId: 9, number: 9, title: "Episode 9", duration: 10 },
-    { id: 910, seasonId: 9, number: 10, title: "Episode 10", duration: 10 },
-    // { id: 911, seasonId: 9, number: 11, title: "Episode 11", duration: 10 },
-    // { id: 912, seasonId: 9, number: 12, title: "Episode 12", duration: 10 },
-    // { id: 913, seasonId: 9, number: 13, title: "Episode 13", duration: 10 },
+    {
+      id: 908,
+      seasonId: 9,
+      number: 8,
+      title: "on a changé de pays",
+      duration: 1601,
+    },
+    {
+      id: 909,
+      seasonId: 9,
+      number: 9,
+      title: "il était trop content",
+      duration: 1674,
+    },
+    {
+      id: 910,
+      seasonId: 9,
+      number: 10,
+      title: "du kiff, tout simplement.",
+      duration: 1205,
+    },
+    {
+      id: 911,
+      seasonId: 9,
+      number: 11,
+      title: "10 ans plus tard je réalise mon rêve",
+      duration: 1922,
+    },
+    {
+      id: 912,
+      seasonId: 9,
+      number: 12,
+      title: "ils ne se supportent plus...",
+      duration: 1804,
+    },
+    {
+      id: 913,
+      seasonId: 9,
+      number: 13,
+      title: "on a réalisé sa journée de rêve",
+      duration: 1987,
+    },
     // { id: 914, seasonId: 9, number: 14, title: "Episode 14", duration: 10 },
     // { id: 915, seasonId: 9, number: 15, title: "Episode 15", duration: 10 },
     // { id: 916, seasonId: 9, number: 16, title: "Episode 16", duration: 10 },
@@ -673,6 +709,123 @@ export default async function seed() {
       description: "Lena court en partenariat avec Adidas",
       timestamp: 802,
       duration: 101,
+      type: "sponsor",
+    },
+  ]);
+
+  // Episode 908
+  await db.insert(Collab).values([
+    {
+      episodeId: 908,
+      brandId: 2,
+      description: "Lena court en partenariat avec Adidas",
+      timestamp: 1412,
+      duration: 104,
+      type: "sponsor",
+    },
+  ]);
+
+  // Episode 909
+  await db.insert(Collab).values([
+    {
+      episodeId: 909,
+      brandId: 3,
+      description: "Lena distribue des Chupa Chups",
+      timestamp: 930,
+      duration: 70,
+      type: "sponsor",
+    },
+    {
+      episodeId: 909,
+      brandId: 2,
+      description: "Lena court en partenariat avec Adidas",
+      timestamp: 1566,
+      duration: 50,
+      type: "sponsor",
+    },
+  ]);
+
+  // Episode 910
+  await db.insert(Collab).values([
+    {
+      episodeId: 910,
+      brandId: 2,
+      description: "Lena court en partenariat avec Adidas",
+      timestamp: 1056,
+      duration: 54,
+      type: "sponsor",
+    },
+  ]);
+
+  // Episode 911
+  await db.insert(Collab).values([
+    {
+      episodeId: 911,
+      brandId: 5,
+      description: "Lena fait la promo de son nouveau livre",
+      timestamp: 473,
+      duration: 47,
+      type: "self",
+    },
+    {
+      episodeId: 911,
+      brandId: 3,
+      description: "Lena et la bande mangent des Chupa Chups",
+      timestamp: 1544,
+      duration: 53,
+      type: "undisclosed",
+    },
+    {
+      episodeId: 911,
+      brandId: 9,
+      description: "Lena mentionne Pom'Potes",
+      timestamp: 1753,
+      duration: 10,
+      type: "undisclosed",
+    },
+    {
+      episodeId: 911,
+      brandId: 2,
+      description: "Lena court en partenariat avec Adidas",
+      timestamp: 1784,
+      duration: 31,
+      type: "sponsor",
+    },
+  ]);
+
+  // Episode 912
+  await db.insert(Collab).values([
+    {
+      episodeId: 912,
+      brandId: 5,
+      description:
+        "Lena montre que Marcus a acheté son livre en plein d'éxemplaires",
+      timestamp: 160,
+      duration: 80,
+      type: "self",
+    },
+    {
+      episodeId: 912,
+      brandId: 9,
+      description: "Lena distribue des Pom'Potes",
+      timestamp: 291,
+      duration: 34,
+      type: "sponsor",
+    },
+    {
+      episodeId: 912,
+      brandId: 3,
+      description: "Lena montre les nouveaux produits de Chupa Chups",
+      timestamp: 659,
+      duration: 15,
+      type: "undisclosed",
+    },
+    {
+      episodeId: 912,
+      brandId: 2,
+      description: "Lena court en partenariat avec Adidas",
+      timestamp: 1658,
+      duration: 85,
       type: "sponsor",
     },
   ]);

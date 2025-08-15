@@ -1,0 +1,115 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Lena Communication">
+  <div class="contact-wrapper">
+    <form
+      name="contact"
+      action="/contact-success"
+      method="POST"
+      data-netlify-recaptcha="true"
+      data-netlify="true"
+    >
+      <div>
+        <div class="fields-wrapper">
+          <div>
+            <label for="email">Email (si vous voulez être recontacté.e)</label>
+            <div>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                autocomplete="email"
+              />
+            </div>
+          </div>
+          <div>
+            <label for="message">Message</label>
+            <div>
+              <textarea
+                name="message"
+                id="message"
+                rows="4"
+                placeholder="Votre message, soyez gentil.le !"></textarea>
+            </div>
+          </div>
+        </div>
+        <div class="button-wrapper">
+          <div data-netlify-recaptcha="true"></div>
+          <button type="submit"> Envoyer </button>
+        </div>
+      </div>
+
+      <p>
+        Vous pouvez aussi me contacter par mail sur <a
+          href="mailto:8tienlqdu@mozmail.com">8tienlqdu@mozmail.com</a
+        >
+      </p>
+    </form>
+  </div>
+</Layout>
+
+<style>
+  .contact-wrapper {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+    height: calc(100vh - 392px);
+  }
+
+  form {
+    background-color: #feffec;
+    padding: 2rem;
+    border-radius: 12px;
+    border: 8px solid var(--light-blue);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .fields-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  label {
+    font-size: 1.2rem;
+    font-weight: 700;
+
+    margin-bottom: 0.5rem;
+    display: inline-block;
+  }
+
+  input,
+  textarea {
+    border: 1px solid var(--light-blue);
+    border-radius: 12px;
+    padding: 0.5rem;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .button-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  button {
+    background-color: var(--melon);
+    color: white;
+    border: none;
+    font-weight: 700;
+    border-radius: 12px;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    cursor: pointer;
+  }
+</style>
