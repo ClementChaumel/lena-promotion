@@ -98,6 +98,27 @@ export default async function seed() {
       secondaryColor: "#212121",
       logo: "https://zyneofficial.com/cdn/shop/files/logo_28_12_Crop_360x.png?v=1629806461",
     },
+    {
+      id: 13,
+      name: "IBELIV",
+      primaryColor: "#cdac84",
+      secondaryColor: "#9e5136",
+      logo: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fgenial-conceptstore.de%2Fwp-content%2Fuploads%2F2023%2F03%2Fibeliv-logo-100x100.jpg&f=1&nofb=1&ipt=8c0ec4bc9c57051c8abd163256bc24973b623a40d497794f04d2abb32a90d5df",
+    },
+    {
+      id: 14,
+      name: "Old El Paso",
+      primaryColor: "#c10230",
+      secondaryColor: "#fee400",
+      logo: "https://www.oldelpaso.fr/-/media/project/gmi/oldelpaso/oldelpaso-fr/oepp/oep-logo-fr.png?h=298&iar=0&w=500&rev=c451b3e4179c4e9a9b743e62e2c3cdac&hash=52D528987BF9BEE295DF5D25DBC74C84",
+    },
+    {
+      id: 15,
+      name: "Havaianas",
+      primaryColor: "#d61312",
+      secondaryColor: "#ffffff",
+      logo: "https://www.havaianas-store.com/on/demandware.static/Sites-Havaianas_FR-Site/-/default/dw17857035/images/logo.svg",
+    },
   ]);
 
   await db.insert(Episode).values([
@@ -457,14 +478,62 @@ export default async function seed() {
       title: "on a réalisé sa journée de rêve",
       duration: 1987,
     },
-    // { id: 914, seasonId: 9, number: 14, title: "Episode 14", duration: 10 },
-    // { id: 915, seasonId: 9, number: 15, title: "Episode 15", duration: 10 },
-    // { id: 916, seasonId: 9, number: 16, title: "Episode 16", duration: 10 },
-    // { id: 917, seasonId: 9, number: 17, title: "Episode 17", duration: 10 },
-    // { id: 918, seasonId: 9, number: 18, title: "Episode 18", duration: 10 },
-    // { id: 919, seasonId: 9, number: 19, title: "Episode 19", duration: 10 },
-    // { id: 920, seasonId: 9, number: 20, title: "Episode 20", duration: 10 },
-    // { id: 921, seasonId: 9, number: 21, title: "Episode 21", duration: 10 },
+    {
+      id: 914,
+      seasonId: 9,
+      number: 14,
+      title: "un guide très spécial à Monaco",
+      duration: 1829,
+    },
+    {
+      id: 915,
+      seasonId: 9,
+      number: 15,
+      title: "ils m'ont laissée seule en mer",
+      duration: 1954,
+    },
+    {
+      id: 916,
+      seasonId: 9,
+      number: 16,
+      title: "on a chopé un virus...",
+      duration: 1669,
+    },
+    {
+      id: 917,
+      seasonId: 9,
+      number: 17,
+      title: "mes nouveaux bureaux",
+      duration: 1701,
+    },
+    {
+      id: 918,
+      seasonId: 9,
+      number: 18,
+      title: "j'ai le droit de le faire.",
+      duration: 1424,
+    },
+    {
+      id: 919,
+      seasonId: 9,
+      number: 19,
+      title: "bienvenus dans la vlog house",
+      duration: 2198,
+    },
+    {
+      id: 920,
+      seasonId: 9,
+      number: 20,
+      title: "le multiverse de mes potes",
+      duration: 2034,
+    },
+    {
+      id: 921,
+      seasonId: 9,
+      number: 21,
+      title: "ils m'ont fait une grosse surprise",
+      duration: 2244,
+    },
     // { id: 922, seasonId: 9, number: 22, title: "Episode 22", duration: 10 },
     // { id: 923, seasonId: 9, number: 23, title: "Episode 23", duration: 10 },
     // { id: 924, seasonId: 9, number: 24, title: "Episode 24", duration: 10 },
@@ -826,6 +895,273 @@ export default async function seed() {
       description: "Lena court en partenariat avec Adidas",
       timestamp: 1658,
       duration: 85,
+      type: "sponsor",
+    },
+  ]);
+
+  // Episode 913
+  await db.insert(Collab).values([
+    {
+      episodeId: 913,
+      brandId: 2,
+      description: "Lena court en partenariat avec Adidas",
+      timestamp: 1809,
+      duration: 35,
+      type: "sponsor",
+    },
+  ]);
+
+  // Episode 914
+  await db.insert(Collab).values([
+    {
+      episodeId: 914,
+      brandId: 13,
+      description: "Lena reçoit des cadeaux de IBELIV",
+      timestamp: 737,
+      duration: 7,
+      type: "undisclosed",
+    },
+    {
+      episodeId: 914,
+      brandId: 2,
+      description: "Lena court en partenariat avec Adidas",
+      timestamp: 1643,
+      duration: 82,
+      type: "sponsor",
+    },
+  ]);
+
+  // Episode 915
+  await db.insert(Collab).values([
+    {
+      episodeId: 915,
+      brandId: 2,
+      description: "Lena court en partenariat avec Adidas",
+      timestamp: 1836,
+      duration: 63,
+      type: "sponsor",
+    },
+  ]);
+
+  // Episode 916
+  await db.insert(Collab).values([
+    {
+      episodeId: 916,
+      brandId: 7,
+      description: "Lena montre son sac à dos Duolingo",
+      timestamp: 1000,
+      duration: 13,
+      type: "undisclosed",
+    },
+    {
+      episodeId: 916,
+      brandId: 2,
+      description: "Lena court en partenariat avec Adidas",
+      timestamp: 1040,
+      duration: 40,
+      type: "sponsor",
+    },
+  ]);
+
+  // Episode 917
+  await db.insert(Collab).values([
+    {
+      episodeId: 917,
+      brandId: 5,
+      description:
+        "Lena et Seb discutent des couvertures de son prochaine livre",
+      timestamp: 681,
+      duration: 68,
+      type: "self",
+    },
+    {
+      episodeId: 917,
+      brandId: 2,
+      description: "Lena court en partenariat avec Adidas",
+      timestamp: 1055,
+      duration: 55,
+      type: "sponsor",
+    },
+  ]);
+
+  // Episode 918
+  await db.insert(Collab).values([
+    {
+      episodeId: 918,
+      brandId: 1,
+      description: "Lena va au pop-up",
+      timestamp: 184,
+      duration: 31,
+      type: "self",
+    },
+    {
+      episodeId: 918,
+      brandId: 5,
+      description: "Lena parle de son prochain livre avec des fans",
+      timestamp: 215,
+      duration: 12,
+      type: "self",
+    },
+    {
+      episodeId: 918,
+      brandId: 1,
+      description: "Lena fait le tour du pop-up",
+      timestamp: 227,
+      duration: 10,
+      type: "self",
+    },
+    {
+      episodeId: 918,
+      brandId: 9,
+      description: "Lena montre l'atelier de Pom'Potes",
+      timestamp: 237,
+      duration: 19,
+      type: "sponsor",
+    },
+    {
+      episodeId: 918,
+      brandId: 1,
+      description: "Lena fait le tour du pop-up",
+      timestamp: 256,
+      duration: 19,
+      type: "self",
+    },
+    {
+      episodeId: 918,
+      brandId: 9,
+      description: "Lena montre l'atelier de Pom'Potes",
+      timestamp: 275,
+      duration: 25,
+      type: "sponsor",
+    },
+    {
+      episodeId: 918,
+      brandId: 1,
+      description: "Lena fait le tour du pop-up",
+      timestamp: 300,
+      duration: 165,
+      type: "self",
+    },
+    {
+      episodeId: 918,
+      brandId: 9,
+      description: "Lena participe à l'atelier de Pom'Potes",
+      timestamp: 465,
+      duration: 123,
+      type: "sponsor",
+    },
+    {
+      episodeId: 918,
+      brandId: 5,
+      description: "Des fans disent d'acheter le livre",
+      timestamp: 588,
+      duration: 12,
+      type: "self",
+    },
+    {
+      episodeId: 918,
+      brandId: 1,
+      description: "Lena part du pop-up",
+      timestamp: 600,
+      duration: 8,
+      type: "self",
+    },
+    {
+      episodeId: 918,
+      brandId: 2,
+      description: "Lena court en partenariat avec Adidas",
+      timestamp: 680,
+      duration: 76,
+      type: "sponsor",
+    },
+  ]);
+
+  // Episode 916
+  await db.insert(Collab).values([
+    {
+      episodeId: 916,
+      brandId: 7,
+      description: "Lena montre son sac à dos Duolingo",
+      timestamp: 1000,
+      duration: 13,
+      type: "undisclosed",
+    },
+    {
+      episodeId: 916,
+      brandId: 2,
+      description: "Lena court en partenariat avec Adidas",
+      timestamp: 1040,
+      duration: 40,
+      type: "sponsor",
+    },
+  ]);
+
+  // Episode 919
+  await db.insert(Collab).values([
+    {
+      episodeId: 919,
+      brandId: 5,
+      description:
+        "Lena et son père discutent des couvertures de son prochaine livre",
+      timestamp: 400,
+      duration: 64,
+      type: "self",
+    },
+    {
+      episodeId: 919,
+      brandId: 5,
+      description:
+        "Lena, Bilal et Marcus discutent des couvertures de son prochaine livre",
+      timestamp: 582,
+      duration: 86,
+      type: "self",
+    },
+    {
+      episodeId: 919,
+      brandId: 14,
+      description: "Lena Montre qu'elle achète des produits de Old El Paso",
+      timestamp: 872,
+      duration: 7,
+      type: "sponsor",
+    },
+    {
+      episodeId: 919,
+      brandId: 1,
+      description: "Lena Montre les goodies hotel Mahfouf",
+      timestamp: 1029,
+      duration: 3,
+      type: "self",
+    },
+    {
+      episodeId: 919,
+      brandId: 15,
+      description: "Lena Montre les goodies Havaianas",
+      timestamp: 1032,
+      duration: 3,
+      type: "undisclosed",
+    },
+    {
+      episodeId: 919,
+      brandId: 1,
+      description: "Lena Montre les goodies hotel Mahfouf",
+      timestamp: 1101,
+      duration: 4,
+      type: "self",
+    },
+    {
+      episodeId: 919,
+      brandId: 15,
+      description: "Lena Montre les goodies Havaianas",
+      timestamp: 1105,
+      duration: 3,
+      type: "undisclosed",
+    },
+    {
+      episodeId: 919,
+      brandId: 2,
+      description: "Lena court en partenariat avec Adidas",
+      timestamp: 1819,
+      duration: 116,
       type: "sponsor",
     },
   ]);
