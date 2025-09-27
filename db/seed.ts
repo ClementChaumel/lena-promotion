@@ -1076,26 +1076,6 @@ export default async function seed() {
     },
   ]);
 
-  // Episode 916
-  await db.insert(Collab).values([
-    {
-      episodeId: 916,
-      brandId: 7,
-      description: "Lena montre son sac à dos Duolingo",
-      timestamp: 1000,
-      duration: 13,
-      type: "undisclosed",
-    },
-    {
-      episodeId: 916,
-      brandId: 2,
-      description: "Lena court en partenariat avec Adidas",
-      timestamp: 1040,
-      duration: 40,
-      type: "sponsor",
-    },
-  ]);
-
   // Episode 919
   await db.insert(Collab).values([
     {
