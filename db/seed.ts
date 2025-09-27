@@ -534,16 +534,76 @@ export default async function seed() {
       title: "ils m'ont fait une grosse surprise",
       duration: 2244,
     },
-    // { id: 922, seasonId: 9, number: 22, title: "Episode 22", duration: 10 },
-    // { id: 923, seasonId: 9, number: 23, title: "Episode 23", duration: 10 },
-    // { id: 924, seasonId: 9, number: 24, title: "Episode 24", duration: 10 },
-    // { id: 925, seasonId: 9, number: 25, title: "Episode 25", duration: 10 },
-    // { id: 926, seasonId: 9, number: 26, title: "Episode 26", duration: 10 },
-    // { id: 927, seasonId: 9, number: 27, title: "Episode 27", duration: 10 },
-    // { id: 928, seasonId: 9, number: 28, title: "Episode 28", duration: 10 },
-    // { id: 929, seasonId: 9, number: 29, title: "Episode 29", duration: 10 },
-    // { id: 930, seasonId: 9, number: 30, title: "Episode 30", duration: 10 },
-    // { id: 931, seasonId: 9, number: 31, title: "Episode 31", duration: 10 },
+    {
+      id: 922,
+      seasonId: 9,
+      number: 22,
+      title: "des nouveaux arrivants dans la villa",
+      duration: 1915,
+    },
+    {
+      id: 923,
+      seasonId: 9,
+      number: 23,
+      title: "on se fait tous tatouer 🫣",
+      duration: 1876,
+    },
+    {
+      id: 924,
+      seasonId: 9,
+      number: 24,
+      title: "j'ai une dette...",
+      duration: 1250,
+    },
+    {
+      id: 925,
+      seasonId: 9,
+      number: 25,
+      title: "nouveau look pour une nouvelle vie",
+      duration: 1414,
+    },
+    {
+      id: 926,
+      seasonId: 9,
+      number: 26,
+      title: "dans les coulisses du GP explorer",
+      duration: 2185,
+    },
+    {
+      id: 927,
+      seasonId: 9,
+      number: 27,
+      title: "on doit refaire TOUTE sa maison",
+      duration: 1702,
+    },
+    {
+      id: 928,
+      seasonId: 9,
+      number: 28,
+      title: "j’ai pété un câble",
+      duration: 1159,
+    },
+    {
+      id: 929,
+      seasonId: 9,
+      number: 29,
+      title: "ils ont réalisé leur rêve",
+      duration: 1554,
+    },
+    {
+      id: 930,
+      seasonId: 9,
+      number: 30,
+      title: "j’organise ma baby shower",
+      duration: 1658,
+    },
+    {
+      id: 931,
+      seasonId: 9,
+      number: 31,
+      title: "les vlogs d'aout, c'est fini",
+      duration: 1681,
+    },
   ]);
 
   // Episode 901
@@ -1142,6 +1202,92 @@ export default async function seed() {
       description: "Lena court en partenariat avec Adidas",
       timestamp: 1819,
       duration: 116,
+      type: "sponsor",
+    },
+  ]);
+
+  // Episode 920
+  await db.insert(Collab).values([
+    {
+      episodeId: 920,
+      brandId: 1,
+      description:
+        "Lena participe à l'évènement Vacances de ouf du Secours Populaire",
+      timestamp: 207,
+      duration: 213,
+      type: "sponsor",
+    },
+    {
+      episodeId: 920,
+      brandId: 5,
+      description:
+        "Lena raconte l'évènement Vacances de ouf du Secours Populaire",
+      timestamp: 603,
+      duration: 52,
+      type: "sponsor",
+    },
+    {
+      episodeId: 920,
+      brandId: 2,
+      description: "Lena court en partenariat avec Adidas",
+      timestamp: 673,
+      duration: 50,
+      type: "sponsor",
+    },
+    {
+      episodeId: 920,
+      brandId: 2,
+      description: "Bigflo fait la pub pour sa boisson Matecito",
+      timestamp: 1484,
+      duration: 45,
+      type: "undisclosed",
+    },
+    {
+      episodeId: 920,
+      brandId: 2,
+      description: "Bigflo fait la pub pour sa marque Visionnaire",
+      timestamp: 1798,
+      duration: 117,
+      type: "undisclosed",
+    },
+  ]);
+
+  // Episode 921
+  await db.insert(Collab).values([
+    {
+      episodeId: 921,
+      brandId: 1,
+      description: "Bigflo fait la pub pour sa marque Visionnaire",
+      timestamp: 440,
+      duration: 10,
+      type: "undisclosed",
+    },
+    {
+      episodeId: 921,
+      brandId: 2,
+      description: "Lena court en partenariat avec Adidas",
+      timestamp: 1557,
+      duration: 140,
+      type: "sponsor",
+    },
+    {
+      episodeId: 921,
+      brandId: 2,
+      description: "Lena montre des présentoirs de Chupa Chups",
+      timestamp: 1808,
+      duration: 90,
+      type: "undisclosed",
+    },
+  ]);
+
+  // Episode 922
+  await db.insert(Collab).values([
+    {
+      episodeId: 922,
+      brandId: 2,
+      description: "Lena court en partenariat avec Adidas",
+      timestamp: 1642,
+      duration: 120,
       type: "sponsor",
     },
   ]);
